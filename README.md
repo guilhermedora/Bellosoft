@@ -1,70 +1,28 @@
-# Getting Started with Create React App
+### Tarefa: Construção de uma Tela de Login/Registro
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descrição:
+Você deverá construir uma tela de login/registro com base no design fornecido no Figma. A página deve incluir um formulário de login e um formulário de registro, ambos acessíveis a partir de uma interface amigável.
 
-## Available Scripts
+## Requisitos:
+Formulário de Login: Inclua campos para email e senha, e um botão de "Entrar".
+Formulário de Registro: Inclua campos para, email, celular e senha, e um botão de "Registrar".
+Comportamento: O usuário deve poder alternar entre os formulários de login e registro.
+Validação: Adicione validações básicas nos campos (ex: verificação de email válido, validar se a senha é forte).
+Responsividade: A página deve ser responsiva e funcionar bem em dispositivos móveis.
+Interatividade: Utilize JavaScript para validar os campos e para alternar entre os formulários.
 
-In the project directory, you can run:
+## Detalhes Técnicos:
+HTML/CSS/JavaScript: Você pode utilizar frameworks ou bibliotecas com as quais se sinta confortável (ex: React, Vue, Angular).
+Design: Siga o design fornecido no Figma o mais próximo possível. https://www.figma.com/design/Y8bCTuJ4OhCYNHjVqaXrUF/Login-and-Signup-Screen-(Community)?node-id=0-1&t=SwdWB0EZ4GD1fl1A-0
+Hospedagem: Hospede seu projeto em uma ferramenta online como JSFiddle, CodePen ou JSBin e nos envie o link.
+Critérios de Avaliação:
+Fidelidade ao design do Figma.
+Boas práticas de codificação (código limpo e bem organizado).
+Responsividade do design.
+Funcionalidade e interatividade da aplicação.
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Passos:
+Acesse o design no Figma através deste link: https://www.figma.com/design/Y8bCTuJ4OhCYNHjVqaXrUF/Login-and-Signup-Screen-(Community)?node-id=0-1&t=SwdWB0EZ4GD1fl1A-0
+Implemente o design em uma aplicação web funcional.
+Hospede seu projeto em uma das ferramentas online mencionadas.
+Envie o link para o seu projeto para mateus.bellozupko@bellosoft.com (Incluir seu nome completo).
