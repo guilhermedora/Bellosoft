@@ -40,6 +40,11 @@ function LoginForm() {
             return setTimeout(() => {
                 setSuccessAlert(false)
             }, 2000)
+        } else {
+            setFailAlert(true)
+            return setTimeout(() => {
+                setFailAlert(false)
+            }, 3000)
         }
     }
 
