@@ -28,18 +28,23 @@ function LoginForm() {
         const { email, password } = login
         const key = login.email
         const storageItem = localStorage.getItem(key);
+        if (!storageItem || !email || !password) {
+            setFailAlert(true)
+            setTimeout(() => {
+                setFailAlert(false)
+            }, 2000)
+            return
+        }
         const recoveryData = await JSON.parse(storageItem);
         if (recoveryData.email === email && recoveryData.password === password) {
             setSuccessAlert(true)
             setTimeout(() => {
                 setSuccessAlert(false)
             }, 2000)
-        } else {
-            setFailAlert(true)
-            setTimeout(() => {
-                setFailAlert(false)
-            }, 2000)
+            return
         }
+
+        clearTimeout()
     }
 
     return (
