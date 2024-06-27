@@ -15,7 +15,6 @@ function LoginForm() {
     const navigate = useNavigate()
     const [successAlert, setSuccessAlert] = useState(false)
     const [failAlert, setFailAlert] = useState(false)
-    const [emailExist, setEmailExist] = useState(false)
     const [eyeControl, setEyeControl] = useState(false)
     const [signup, setSignup] = useState({
         email: "",
@@ -70,19 +69,13 @@ function LoginForm() {
     const handleSubmit = () => {
         const { email: value } = signup
         const { email, phone, password } = scanField
-        if (!email || !phone || !password) {
+        const key = value
+        const storageItem = localStorage.getItem(key)
+
+        if (!email || !phone || !password || storageItem) {
             setFailAlert(true)
             setTimeout(() => {
                 setFailAlert(false)
-            }, 3000)
-            return
-        }
-        const key = value
-        const storageItem = localStorage.getItem(key)
-        if (storageItem) {
-            setEmailExist(true)
-            setTimeout(() => {
-                setEmailExist(false)
             }, 3000)
             return
         }
@@ -104,15 +97,13 @@ function LoginForm() {
     return (
         <form className='container-formlogin'>
             <Snackbar
-                open={successAlert || failAlert || emailExist}
+                open={successAlert || failAlert}
                 anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
             >
                 <Alert variant="standard" severity={successAlert ? "success" : "error"}>
                     {successAlert
                         ? 'Cadastro efetuado com sucesso!'
-                        : failAlert
-                            ? "Verifique os campos e tente novamente."
-                            : "Já existe uma conta associada a este email."
+                        : "Verifique os campos e tente novamente."
                     }
                 </Alert>
             </Snackbar>

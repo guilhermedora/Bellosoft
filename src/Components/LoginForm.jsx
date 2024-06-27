@@ -11,7 +11,6 @@ import Alert from '@mui/material/Alert';
 import Grow from '@mui/material/Grow';
 
 function LoginForm() {
-    const [wrongCredentialsAlert, setWrongCredentialsAlert] = useState(false)
     const [successAlert, setSuccessAlert] = useState(false)
     const [failAlert, setFailAlert] = useState(false)
     const [eyeControl, setEyeControl] = useState(false)
@@ -31,38 +30,29 @@ function LoginForm() {
         const storageItem = localStorage.getItem(key);
         if (!storageItem || !email || !password) {
             setFailAlert(true)
-            setTimeout(() => {
+            return setTimeout(() => {
                 setFailAlert(false)
             }, 3000)
-            return
         }
         const recoveryData = await JSON.parse(storageItem);
         if (recoveryData.email === email && recoveryData.password === password) {
             setSuccessAlert(true)
-            setTimeout(() => {
+            return setTimeout(() => {
                 setSuccessAlert(false)
-            }, 3000)
-        } else {
-            setWrongCredentialsAlert(true)
-            setTimeout(() => {
-                setWrongCredentialsAlert(false)
-            }, 3000)
+            }, 2000)
         }
     }
-
 
     return (
         <form className='container-formlogin'>
             <Snackbar
-                open={successAlert || failAlert || wrongCredentialsAlert}
+                open={successAlert || failAlert}
                 anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
             >
                 <Alert variant="standard" severity={successAlert ? "success" : "error"}>
                     {successAlert
                         ? 'Logando no sistema...'
-                        : failAlert
-                            ? 'Verifique os campos e tente novamente.'
-                            : 'Email ou Senha incorretos.'
+                        : 'Verifique os campos email/senha e tente novamente.'
                     }
                 </Alert>
             </Snackbar>

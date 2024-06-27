@@ -1,5 +1,4 @@
 import * as React from 'react';
-import '../App.css';
 import Footer from '../Components/Footer';
 import Header from '../Components/Header';
 import TitleSignup from '../Components/TitleSignup';

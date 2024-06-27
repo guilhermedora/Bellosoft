@@ -11,7 +11,7 @@ function Header() {
     useEffect(() => {
         if (pathname === '/login') setRouteTo("/signup")
         else setRouteTo("/login")
-    }, [])
+    }, [pathname])
 
 
     async function NavigateAction(routeTo) {

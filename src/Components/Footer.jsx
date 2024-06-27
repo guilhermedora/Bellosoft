@@ -28,7 +28,7 @@ function Footer() {
             setSpanLink(" Login Now")
             setRouteTo("/login")
         }
-    }, [])
+    }, [pathname])
 
     return (
         <footer className='container-footer'>
@@ -43,7 +43,7 @@ function Footer() {
                         key={icon}
                     >
                         <IconButton className='media-button'>
-                            <img src={icons[index]} />
+                            <img alt='Botões para mídia social' src={icons[index]} />
                         </IconButton>
                     </Fade>
                 ))}
