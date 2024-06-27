@@ -41,10 +41,13 @@ function LoginForm() {
             setTimeout(() => {
                 setSuccessAlert(false)
             }, 2000)
-            return
         }
-
-        clearTimeout()
+        if (recoveryData.email !== email && recoveryData.password !== password) {
+            setFailAlert(true)
+            setTimeout(() => {
+                setFailAlert(false)
+            }, 2000)
+        }
     }
 
     return (
@@ -54,7 +57,7 @@ function LoginForm() {
                 anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
             >
                 <Alert variant="standard" severity={successAlert ? "success" : "error"}>
-                    {successAlert
+                    {successAlert && !failAlert
                         ? 'Logando no sistema...'
                         : 'Verifique os campos email/senha e tente novamente.'
                     }
