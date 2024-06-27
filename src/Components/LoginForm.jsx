@@ -40,9 +40,8 @@ function LoginForm() {
             setSuccessAlert(true)
             setTimeout(() => {
                 setSuccessAlert(false)
-            }, 2000)
-        }
-        if (recoveryData.email !== email && recoveryData.password !== password) {
+            }, 3000)
+        } else {
             setFailAlert(true)
             setTimeout(() => {
                 setFailAlert(false)
@@ -52,17 +51,22 @@ function LoginForm() {
 
     return (
         <form className='container-formlogin'>
-            <Snackbar
-                open={successAlert || failAlert}
+            {successAlert && <Snackbar
+                open={successAlert}
                 anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
             >
-                <Alert variant="standard" severity={successAlert ? "success" : "error"}>
-                    {successAlert && !failAlert
-                        ? 'Logando no sistema...'
-                        : 'Verifique os campos email/senha e tente novamente.'
-                    }
+                <Alert variant="standard" severity={"success"}>
+                    Logando no sistema...
                 </Alert>
-            </Snackbar>
+            </Snackbar>}
+            {failAlert && <Snackbar
+                open={failAlert}
+                anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+            >
+                <Alert variant="standard" severity={"error"}>
+                    Verifique os campos email/senha e tente novamente.
+                </Alert>
+            </Snackbar>}
             <div className="formlogin-mail">
                 <EmailIcon htmlColor='#CCCCCC' />
                 <div className='formlogin-mail-inputgroup' >

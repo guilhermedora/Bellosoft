@@ -96,17 +96,22 @@ function LoginForm() {
 
     return (
         <form className='container-formlogin'>
-            <Snackbar
-                open={successAlert || failAlert}
+            {successAlert && <Snackbar
+                open={successAlert}
                 anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
             >
-                <Alert variant="standard" severity={successAlert ? "success" : "error"}>
-                    {successAlert
-                        ? 'Cadastro efetuado com sucesso!'
-                        : "Verifique os campos e tente novamente."
-                    }
+                <Alert variant="standard" severity={"success"}>
+                    Logando no sistema...
                 </Alert>
-            </Snackbar>
+            </Snackbar>}
+            {failAlert && <Snackbar
+                open={failAlert}
+                anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+            >
+                <Alert variant="standard" severity={"error"}>
+                    Verifique os campos email/senha e tente novamente.
+                </Alert>
+            </Snackbar>}
             <div className="formlogin-mail">
                 <EmailIcon htmlColor='#CCCCCC' />
                 <div className='formlogin-mail-inputgroup' >
